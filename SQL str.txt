@@ -1,0 +1,24 @@
+Microsoft SQL conn
+acount: rac_user
+psw: more3366
+conn string=192.168.192.9
+DB:MEC-RAC
+
+
+
+1bus=12 bettery pack ;1 bettery pack=14 cell
+
+'bettery Pack A blance status Bar Chart & data
+ SELECT top 1  'A' as A, [vehicleNo], [batteryVoltage 0], [batteryVoltage 1], [batteryVoltage 2], [batteryVoltage 3], [batteryVoltage 4], [batteryVoltage 5], [batteryVoltage 6], [batteryVoltage 7], [batteryVoltage 8], [batteryVoltage 9], [batteryVoltage 10], [batteryVoltage 11], [batteryVoltage 12], [batteryVoltage 13]  FROM [MEC-RAC].[dbo].[View_CellMonitoring] 
+ where  convert(datetime,utcDateTime)>= convert(datetime,GETDATE()-100,111) order by utcDateTime desc  
+
+
+
+1 bettery pack=4 temp sensor
+'bettery Pack A  temperture
+SELECT TOP 1 [batteryTemperature 0]
+      ,[batteryTemperature 1]    
+      ,[batteryTemperature 2]     
+      ,[batteryTemperature 3]
+      ,[utcDateTime]      ,[vehicleNo]
+  FROM [MEC-RAC].[dbo].[View_CellTemptureMonitoring]
